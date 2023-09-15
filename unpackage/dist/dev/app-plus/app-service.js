@@ -137,7 +137,7 @@ if (uni.restoreGlobal) {
       const handleAvoidObstacle = () => {
         if (!isActive_Option.value) {
           if (!isOpenAvoidObstacle.value) {
-            input_text_title.value = "                              避障模式";
+            input_text_title.value = "避障模式";
             input_text.value = `避障精度：${distStr}cm`;
             obstacleSvg = inactiveObstacle;
             avoidObstacleCmdSend.value = true;
@@ -145,7 +145,7 @@ if (uni.restoreGlobal) {
             avoidObstacleStr.value = "关闭障碍模式";
             that.$forceUpdate();
           } else {
-            input_text_title.value = "                              遥控模式";
+            input_text_title.value = "遥控模式";
             input_text.value = `输入指令：当前未有输入！`;
             obstacleSvg = avoidObstcleSvg;
             avoidObstacleCmdSend.value = false;
@@ -436,6 +436,7 @@ if (uni.restoreGlobal) {
             fail(err) {
               if (err.errMsg == "createBLEConnection:fail operate time out") {
                 formatAppLog("log", "at pages/index/index.vue:658", "连接超时");
+                input_text.value = "输入指令：当前未有输入！";
                 svg = closeBluetoothSvg;
                 uni.showToast({
                   title: "连接超时",
@@ -450,8 +451,8 @@ if (uni.restoreGlobal) {
                   });
                 }, 1e3);
               } else {
-                formatAppLog("log", "at pages/index/index.vue:673", "连接失败");
-                formatAppLog("error", "at pages/index/index.vue:674", err);
+                formatAppLog("log", "at pages/index/index.vue:675", "连接失败");
+                formatAppLog("error", "at pages/index/index.vue:676", err);
                 uni.showToast({
                   title: "连接失败",
                   icon: "error"
@@ -471,8 +472,8 @@ if (uni.restoreGlobal) {
             deviceId: deviceId.value,
             success(res) {
               if (!isDisconnected.value) {
-                formatAppLog("log", "at pages/index/index.vue:701", "断开连接成功");
-                formatAppLog("log", "at pages/index/index.vue:702", res);
+                formatAppLog("log", "at pages/index/index.vue:703", "断开连接成功");
+                formatAppLog("log", "at pages/index/index.vue:704", res);
                 bluetoothStr.value = "连接蓝牙";
                 obstacleSvg = avoidObstcleSvg;
                 avoidObstacleCmdSend.value = false;
@@ -491,8 +492,8 @@ if (uni.restoreGlobal) {
               }
             },
             fail(err) {
-              formatAppLog("log", "at pages/index/index.vue:725", "断开连接失败");
-              formatAppLog("log", "at pages/index/index.vue:726", err);
+              formatAppLog("log", "at pages/index/index.vue:727", "断开连接失败");
+              formatAppLog("log", "at pages/index/index.vue:728", err);
               uni.showToast({
                 title: "断开连接失败",
                 icon: "fail"
@@ -502,7 +503,7 @@ if (uni.restoreGlobal) {
         }
       };
       uni.onBLEConnectionStateChange(function(res) {
-        formatAppLog("log", "at pages/index/index.vue:741", `device ${res.deviceId} state has changed, connected: ${res.connected}`);
+        formatAppLog("log", "at pages/index/index.vue:743", `device ${res.deviceId} state has changed, connected: ${res.connected}`);
         if (!res.connected) {
           isConnected.value = false;
           isDisconnected.value = true;
@@ -536,11 +537,11 @@ if (uni.restoreGlobal) {
           characteristicId: characteristicId.value,
           // 监听对应的特征值
           success(res) {
-            formatAppLog("log", "at pages/index/index.vue:803", "notify" + res);
+            formatAppLog("log", "at pages/index/index.vue:805", "notify" + res);
             listenValueChange();
           },
           fail(err) {
-            formatAppLog("error", "at pages/index/index.vue:810", err);
+            formatAppLog("error", "at pages/index/index.vue:812", err);
             uni.showToast({
               title: "监听失败",
               icon: "error"
@@ -586,7 +587,7 @@ if (uni.restoreGlobal) {
       };
       function send() {
         let msg = sendData.value;
-        formatAppLog("log", "at pages/index/index.vue:873", msg);
+        formatAppLog("log", "at pages/index/index.vue:875", msg);
         const buffer = new ArrayBuffer(msg.length);
         const dataView = new DataView(buffer);
         for (var i = 0; i < msg.length; i++) {
@@ -598,10 +599,10 @@ if (uni.restoreGlobal) {
           characteristicId: characteristicId.value,
           value: buffer,
           success(res) {
-            formatAppLog("log", "at pages/index/index.vue:889", "writeBLECharacteristicValue success", res.errMsg);
+            formatAppLog("log", "at pages/index/index.vue:891", "writeBLECharacteristicValue success", res.errMsg);
           },
           fail(err) {
-            formatAppLog("error", "at pages/index/index.vue:902", err);
+            formatAppLog("error", "at pages/index/index.vue:904", err);
           }
         });
       }
@@ -906,7 +907,7 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__file", "/Users/mac/Documents/HBuilderProjects/Bluetooth-Car/pages/index/index.vue"]]);
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__file", "/Users/mac/bluetooth-car_frontEnd/pages/index/index.vue"]]);
   __definePage("pages/index/index", PagesIndexIndex);
   const _sfc_main = {
     __name: "App",
@@ -926,7 +927,7 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/mac/Documents/HBuilderProjects/Bluetooth-Car/App.vue"]]);
+  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/mac/bluetooth-car_frontEnd/App.vue"]]);
   function createApp() {
     const app = vue.createVueApp(App);
     return {

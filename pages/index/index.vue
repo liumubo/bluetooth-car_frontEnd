@@ -280,7 +280,7 @@
 	const handleAvoidObstacle = () => {
 		if (!isActive_Option.value) {
 			if (!isOpenAvoidObstacle.value) {
-				input_text_title.value = '                              避障模式';
+				input_text_title.value = '避障模式';
 				input_text.value = `避障精度：${distStr}cm`;
 				obstacleSvg = inactiveObstacle;
 				avoidObstacleCmdSend.value = true;
@@ -288,7 +288,7 @@
 				avoidObstacleStr.value = '关闭障碍模式';
 				that.$forceUpdate();
 			} else {
-				input_text_title.value = '                              遥控模式';
+				input_text_title.value = '遥控模式';
 				input_text.value = `输入指令：当前未有输入！`;
 				obstacleSvg = avoidObstcleSvg;
 				avoidObstacleCmdSend.value = false;
@@ -656,6 +656,7 @@
 
 					if (err.errMsg == 'createBLEConnection:fail operate time out') {
 						console.log('连接超时')
+						input_text.value = '输入指令：当前未有输入！';
 						svg = closeBluetoothSvg;
 						uni.showToast({
 							title: '连接超时',
@@ -670,6 +671,7 @@
 							})
 						}, 1000)
 					} else {
+						
 						console.log('连接失败')
 						console.error(err)
 						uni.showToast({
@@ -1250,7 +1252,7 @@
 		border-radius: 15px;
 		/* margin-top: 10px; */
 		margin-top: 6vh;
-		background-color: rgba(255, 255, 255, 0.2);
+		background-color: rgba(250, 250, 250, 1);
 		box-sizing: border-box;
 		padding: 10px;
 		color: rgba(0, 0, 0, 0.5);
