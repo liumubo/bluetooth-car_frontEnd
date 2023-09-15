@@ -14,10 +14,6 @@ const characteristicId = ref('0000FFE1-0000-1000-8000-00805F9B34FB') //特征值
 
 
 ![S30915-18302561](https://github.com/liumubo/bluetooth-car_frontEnd/assets/114791868/e19bb4df-5b73-46fd-9cda-5d9a773c8706)
-![Uploading S30915-18310468.png…]()
-![Uploading S30915-18311487.png…]()
-![Uploading S30915-18312017.png…]()
 
-
-Uploading S30915-18290308.mp4…
+https://github.com/liumubo/bluetooth-car_frontEnd/assets/114791868/01efabf1-51d7-46b6-b4c3-5919e0e158ca
 
