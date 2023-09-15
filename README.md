@@ -12,8 +12,9 @@ const serviceId = ref('0000FFE0-0000-1000-8000-00805F9B34FB') //蓝牙的服务i
 const characteristicId = ref('0000FFE1-0000-1000-8000-00805F9B34FB') //特征值
 0000FFE1-0000-1000-8000-00805F9B34FB改成你自己的。
 
+![S30915-18302561](https://github.com/liumubo/bluetooth-car_frontEnd/assets/114791868/672572f9-a9f7-4a69-b8bb-2463d22aa951)
 
-![S30915-18302561](https://github.com/liumubo/bluetooth-car_frontEnd/assets/114791868/e19bb4df-5b73-46fd-9cda-5d9a773c8706)
+
 
 ![S30915-18310468](https://github.com/liumubo/bluetooth-car_frontEnd/assets/114791868/15736476-4c89-4670-826d-e1c6f29e1276)
 
